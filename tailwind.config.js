@@ -15,9 +15,6 @@ export default {
             fontFamily: {
                 sans: ["Figtree", ...defaultTheme.fontFamily.sans],
             },
-            letterSpacing: {
-                '2em': '2em'
-            },
         },
     },
 
