@@ -10,10 +10,10 @@ export const useLogin = defineStore("login", {
         }),
     }),
     actions: {
-      submit() {
-        this.form.post(route("login"), {
-            onFinish: () => this.form.reset("password"),
-        });
-      }
+        submit() {
+            this.form.post(route("login"), {
+                onFinish: () => this.$reset(),
+            });
+        },
     },
 });
