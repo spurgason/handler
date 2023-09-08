@@ -1,7 +1,7 @@
 import { useForm } from "@inertiajs/vue3";
 import { defineStore } from "pinia";
 
-export const useLogin = defineStore("useLogin", {
+export const useLogin = defineStore("login", {
     state: () => ({
         form: useForm({
             email: "",
