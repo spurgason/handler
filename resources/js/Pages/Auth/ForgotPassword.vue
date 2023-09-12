@@ -4,7 +4,8 @@ import InputError from '@/Components/InputError.vue';
 import InputLabel from '@/Components/InputLabel.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
-import { Head, useForm } from '@inertiajs/vue3';
+import { Head } from '@inertiajs/vue3';
+import { useForgotPassword } from '@/store/auth/useForgotPassword';
 
 defineProps({
     status: {
@@ -12,13 +13,9 @@ defineProps({
     },
 });
 
-const form = useForm({
-    email: '',
-});
+const form = useForgotPassword().form;
+const submit = useForgotPassword().submit;
 
-const submit = () => {
-    form.post(route('password.email'));
-};
 </script>
 
 <template>
