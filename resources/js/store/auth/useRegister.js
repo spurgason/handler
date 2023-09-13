@@ -13,7 +13,7 @@ export const useRegister = defineStore("register", {
     actions: {
         submit() {
             this.form.post(route("register"), {
-                onFinish: () => this.form.reset("password", "password_confirmation"),
+                onFinish: () => this.$reset(),
             });
         },
     },
