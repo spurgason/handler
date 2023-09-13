@@ -4,7 +4,9 @@ import InputError from '@/Components/InputError.vue';
 import InputLabel from '@/Components/InputLabel.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
-import { Head, useForm } from '@inertiajs/vue3';
+import { Head } from '@inertiajs/vue3';
+import { onMounted  } from 'vue';
+import { useResetPassword } from '@/store/auth/useResetPassword';
 
 const props = defineProps({
     email: {
@@ -17,18 +19,14 @@ const props = defineProps({
     },
 });
 
-const form = useForm({
-    token: props.token,
-    email: props.email,
-    password: '',
-    password_confirmation: '',
+onMounted(() => {
+  useResetPassword().form.email = props.email;
+  useResetPassword().form.token = props.token;
 });
 
-const submit = () => {
-    form.post(route('password.store'), {
-        onFinish: () => form.reset('password', 'password_confirmation'),
-    });
-};
+const form = useResetPassword().form;
+const submit = useResetPassword().submit;
+
 </script>
 
 <template>
