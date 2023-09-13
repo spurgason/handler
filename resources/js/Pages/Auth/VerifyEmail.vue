@@ -2,7 +2,8 @@
 import { computed } from 'vue';
 import GuestLayout from '@/Layouts/GuestLayout.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
-import { Head, Link, useForm } from '@inertiajs/vue3';
+import { Head, Link } from '@inertiajs/vue3';
+import { useVerifyEmail } from '@/store/auth/useVerifyEmail';
 
 const props = defineProps({
     status: {
@@ -10,11 +11,9 @@ const props = defineProps({
     },
 });
 
-const form = useForm({});
+const form = useVerifyEmail().form;
 
-const submit = () => {
-    form.post(route('verification.send'));
-};
+const submit = useVerifyEmail().submit;
 
 const verificationLinkSent = computed(() => props.status === 'verification-link-sent');
 </script>

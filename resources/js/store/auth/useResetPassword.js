@@ -1,18 +1,18 @@
 import { useForm } from "@inertiajs/vue3";
 import { defineStore } from "pinia";
 
-export const useRegister = defineStore("register", {
+export const useResetPassword = defineStore("reset-password", {
     state: () => ({
         form: useForm({
-            name: "",
-            email: "",
+            token: null,
+            email: null,
             password: "",
             password_confirmation: "",
         }),
     }),
     actions: {
         submit() {
-            this.form.post(route("register"), {
+            this.form.post(route("password.store"), {
                 onFinish: () => this.$reset(),
             });
         },
