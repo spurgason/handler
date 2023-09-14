@@ -1,15 +1,14 @@
 <script setup>
-import GuestLayout from '@/Layouts/GuestLayout.vue';
-import InputError from '@/Components/InputError.vue';
-import InputLabel from '@/Components/InputLabel.vue';
-import PrimaryButton from '@/Components/PrimaryButton.vue';
-import TextInput from '@/Components/TextInput.vue';
-import { Head, Link } from '@inertiajs/vue3';
-import { useRegister } from '@/store/auth/useRegister';
+import GuestLayout from "layouts/GuestLayout.vue";
+import InputError from "components/InputError.vue";
+import InputLabel from "components/InputLabel.vue";
+import PrimaryButton from "components/PrimaryButton.vue";
+import TextInput from "components/TextInput.vue";
+import { Head, Link } from "@inertiajs/vue3";
+import { useRegister } from "stores/auth/useRegister";
 
 const form = useRegister().form;
 const submit = useRegister().submit;
-
 </script>
 
 <template>
@@ -64,7 +63,10 @@ const submit = useRegister().submit;
             </div>
 
             <div class="mt-4">
-                <InputLabel for="password_confirmation" value="Confirm Password" />
+                <InputLabel
+                    for="password_confirmation"
+                    value="Confirm Password"
+                />
 
                 <TextInput
                     id="password_confirmation"
@@ -75,7 +77,10 @@ const submit = useRegister().submit;
                     autocomplete="new-password"
                 />
 
-                <InputError class="mt-2" :message="form.errors.password_confirmation" />
+                <InputError
+                    class="mt-2"
+                    :message="form.errors.password_confirmation"
+                />
             </div>
 
             <div class="flex items-center justify-end mt-4">
@@ -86,7 +91,11 @@ const submit = useRegister().submit;
                     Already registered?
                 </Link>
 
-                <PrimaryButton class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                <PrimaryButton
+                    class="ml-4"
+                    :class="{ 'opacity-25': form.processing }"
+                    :disabled="form.processing"
+                >
                     Register
                 </PrimaryButton>
             </div>

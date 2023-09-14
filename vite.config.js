@@ -6,7 +6,7 @@ export default defineConfig({
     plugins: [
         laravel({
             input: "resources/js/app.js",
-            refresh: true,
+            refresh: ['resources/**'],
         }),
         vue({
             template: {
@@ -23,4 +23,12 @@ export default defineConfig({
             host: "localhost",
         },
     },
+    resolve: {
+        alias: {
+            '@': '/resources',
+            components: '/resources/views/Components',
+            layouts: '/resources/views/Layouts',
+            stores: '/resources/js/stores'
+        }
+    }
 });
