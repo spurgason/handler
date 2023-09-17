@@ -40,7 +40,7 @@ const plans = [
         <PrimaryButton
             href="#"
             class="mt-6"
-            >Choose Plan</PrimaryButton
+            >View Plan</PrimaryButton
         >
     </div>
 </template>

@@ -1,25 +1,9 @@
 <script setup>
-import {Head} from "@inertiajs/vue3";
+import {Head, Link} from "@inertiajs/vue3";
 import FeatureCard from "components/FeatureCard.vue";
 import PricingPlan from "components/PricingPlan.vue";
 import PrimaryButton from "components/PrimaryButton.vue";
-
-defineProps({
-    canLogin: {
-        type: Boolean,
-    },
-    canRegister: {
-        type: Boolean,
-    },
-    laravelVersion: {
-        type: String,
-        required: true,
-    },
-    phpVersion: {
-        type: String,
-        required: true,
-    },
-});
+import LandingNav from "../../Components/LandingNav.vue";
 
 </script>
 
@@ -28,37 +12,10 @@ defineProps({
 
     <body class="bg-gray-100 font-sans">
     <!-- Navigation Bar -->
-    <nav class="bg-blue-500 p-4">
-        <div class="container mx-auto">
-            <div class="flex justify-between items-center">
-                <a href="#" class="text-white text-2xl font-bold"
-                ><i class="fa-solid fa-shield-dog mr-2"></i>Handler</a
-                >
-                <ul class="flex space-x-4">
-                    <li>
-                        <a href="#" class="text-white hover:text-gray-200"
-                        >Home</a
-                        >
-                    </li>
-                    <li>
-                        <a href="#" class="text-white hover:text-gray-200"
-                        >Features</a
-                        >
-                    </li>
-                    <li>
-                        <a href="#" class="text-white hover:text-gray-200"
-                        >Pricing</a
-                        >
-                    </li>
-                    <li>
-                        <a href="#" class="text-white hover:text-gray-200"
-                        >Contact</a
-                        >
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+   <LandingNav
+   >
+
+   </LandingNav>
 
     <!-- Hero Section -->
     <section

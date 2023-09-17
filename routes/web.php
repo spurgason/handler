@@ -17,13 +17,14 @@ use Inertia\Inertia;
 */
 
 Route::get('/', function () {
-    return Inertia::render('Welcome', [
+    return Inertia::render('Landing/Welcome', [
         'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
     ]);
 });
+
+Route::get('/features', function () {
+    return Inertia::render('Landing/Features');
+})->name('features');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
