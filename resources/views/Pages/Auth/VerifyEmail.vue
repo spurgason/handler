@@ -16,7 +16,7 @@ const form = useVerifyEmail().form;
 const submit = useVerifyEmail().submit;
 
 const verificationLinkSent = computed(
-    () => props.status === "verification-link-sent"
+    () => props.status === "verification-link-sent",
 );
 </script>
 

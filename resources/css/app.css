@@ -1,8 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@layer base{
-  body {
-    letter-spacing: 0.065em;
-  }
+@layer base {
+    body {
+        letter-spacing: 0.065em;
+    }
 }
