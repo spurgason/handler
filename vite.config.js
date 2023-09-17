@@ -1,12 +1,12 @@
-import { defineConfig } from 'vite';
-import laravel from 'laravel-vite-plugin';
-import vue from '@vitejs/plugin-vue';
+import { defineConfig } from "vite";
+import laravel from "laravel-vite-plugin";
+import vue from "@vitejs/plugin-vue";
 
 export default defineConfig({
     plugins: [
         laravel({
             input: "resources/js/app.js",
-            refresh: ['resources/**'],
+            refresh: ["resources/**"],
         }),
         vue({
             template: {
@@ -25,10 +25,10 @@ export default defineConfig({
     },
     resolve: {
         alias: {
-            '@': '/resources',
-            components: '/resources/views/Components',
-            layouts: '/resources/views/Layouts',
-            stores: '/resources/js/stores'
-        }
-    }
+            "@": "/resources",
+            components: "/resources/views/Components",
+            layouts: "/resources/views/Layouts",
+            stores: "/resources/js/stores",
+        },
+    },
 });

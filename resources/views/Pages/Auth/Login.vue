@@ -6,7 +6,7 @@ import InputLabel from "components/InputLabel.vue";
 import PrimaryButton from "components/PrimaryButton.vue";
 import TextInput from "components/TextInput.vue";
 import { Head, Link } from "@inertiajs/vue3";
-import {useLogin} from 'stores/auth/useLogin';
+import { useLogin } from "stores/auth/useLogin";
 
 defineProps({
     canResetPassword: {
@@ -19,7 +19,6 @@ defineProps({
 
 const form = useLogin().form;
 const submit = useLogin().submit;
-
 </script>
 
 <template>
@@ -88,12 +87,10 @@ const submit = useLogin().submit;
             </div>
 
             <div class="text-sm flex justify-center gap-1 mt-8">
-                <span class="text-gray-900">
-                    Not a member?
-                </span>
+                <span class="text-gray-900"> Not a member? </span>
                 <Link
                     :href="route('register')"
-                    class=" underline rounded-md text-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 hover:text-blue-900"
+                    class="underline rounded-md text-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 hover:text-blue-900"
                 >
                     Register here
                 </Link>
